@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Operation Scheduler</title>
+    <link rel="icon" href="images/logo.png">
+   
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Operation Scheduler</div>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="navMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="login.html" class="btn">Login</a></li>
+          
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to Hospital Operation Scheduler</h1>
+        <p>Efficiently manage surgeries, doctors, and patients with our state-of-the-art scheduling system.</p>
+        <div class="cta-buttons">
+            <a href="register.html" class="btn">Register Now</a>
+            <a href="#services" class="btn" >Learn More</a>
+
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors">
+        <h2>Meet Our Doctors</h2>
+        <div class="doctor-container">
+            <div class="doctor-card">
+                <img src="images/doctor1.jpg" alt="Dr. Hriday Kapoor">
+                <h3>Dr. Hriday Kapoor</h3>
+                <p>Heart Surgeon with 5+ years of experience in complex cardiac procedures.</p>
+            </div>
+            <div class="doctor-card">
+                <img src="images/doctor2.jpg" alt="Dr. Ashok Rathi">
+                <h3>Dr. Ashok Rathi</h3>
+                <p>Neurosurgeon specializing in complex brain surgeries and neurological disorders.</p>
+            </div>
+            <div class="doctor-card">
+                <img src="images/doctor3.jpg" alt="Dr. Bharat Kedar">
+                <h3>Dr. Bharat Kedar</h3>
+                <p>Nephrologist with expertise in kidney transplants and renal care management.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div id="loader" class="loader"></div>
+        
+            <!-- Default services until dynamic content loads -->
+            <div class="service-card">
+                <img src="images/surgery-icon.png" alt="Surgery Scheduling">
+                <h3>Surgery Scheduling</h3>
+                <p>Efficient allocation of operating theaters based on availability and requirements.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/emergency-icon.png" alt="Emergency Management">
+                <h3>Emergency Management</h3>
+                <p>Quick response system for emergency surgeries and procedures.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/resource-icon.png" alt="Resource Tracking">
+                <h3>Resource Tracking</h3>
+                <p>Real-time monitoring of medical equipment and personnel availability.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a leading hospital management system dedicated to streamlining healthcare operations and enhancing patient care. Our Operation Theater Scheduling System helps hospitals optimize their resources, reduce waiting times, and improve the overall efficiency of surgical procedures.</p>
+        <p>With years of experience in healthcare technology, our team has developed a robust platform that meets the complex needs of modern hospitals while maintaining ease of use for medical professionals.</p>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p><strong>Address:</strong> 123 Sadar, Nagpur, India</p>
+        <p><strong>Phone:</strong> +123 456 7890</p>
+        <p><strong>Email:</strong> contact@hospital.com</p>
+        <div class="contact-cta">
+            <a href="mailto:contact@hospital.com" class="btn">Send Email</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Hospital Operation Scheduler. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+        //     // Load services data
+        //     loadServices();
+        // });
+        
+        // // Function to load services from fetch-data.js
+        // function loadServices() {
+        //     const loader = document.getElementById('loader');
+        //     const servicesContainer = document.getElementById('servicesContainer');
+            
+        //     // Show loader
+        //     loader.style.display = 'block';
+            
+        //     // Simulate fetch delay (replace with actual fetch in production)
+        //     setTimeout(() => {
+        //         // Hide loader when data is loaded
+        //         loader.style.display = 'none';
+                
+        //         // Data will be loaded by fetch-data.js
+        //         // This is just a fallback in case that script fails
+        //         if (servicesContainer.children.length === 0) {
+        //             console.log('Services not loaded from fetch-data.js, using fallback data');
+        //         }
+        //     }, 500);
+        // }
+        
+        // Lazy load images for better performance
+    //     document.addEventListener('DOMContentLoaded', function() {
+    //         const lazyImages = document.querySelectorAll('img');
+            
+    //         if ('IntersectionObserver' in window) {
+    //             const imageObserver = new IntersectionObserver((entries, observer) => {
+    //                 entries.forEach(entry => {
+    //                     if (entry.isIntersecting) {
+    //                         const image = entry.target;
+    //                         image.src = image.getAttribute('data-src') || image.src;
+    //                         observer.unobserve(image);
+    //                     }
+    //                 });
+    //             });
+                
+    //             lazyImages.forEach(img => {
+    //                 imageObserver.observe(img);
+    //             });
+    //         }
+    //     });
+    // </script>
+    <script type="module" src="fetch-data.js"></script>
+</body>
+</html>

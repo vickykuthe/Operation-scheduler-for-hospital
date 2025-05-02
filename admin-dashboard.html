@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="icon" href="images/admin.jpg">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <h2>Operation Scheduler Dashboard</h2>
+    
+    <h3>Schedule a Surgery</h3>
+    <form id="addSurgeryForm">
+        <input type="text" id="patientName" placeholder="Patient Name" required>
+        <input type="text" id="email" placeholder="Email" required>
+        <input type="text" id="doctorName" placeholder="Doctor Name" required>
+        <input type="text" id="otRoom" placeholder="OT Room" required>
+        <input type="date" id="date" placeholder="date" required>
+        <input type="text" id="anesthesia" placeholder="Anesthesia Type" required>
+        <button type="submit">Add Surgery</button>
+    </form>
+
+    <h3>Scheduled Surgeries</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Patient Name</th>
+                <th>Email</th>
+                <th>Doctor Name</th>
+                <th>OT Room</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="surgeryTable"></tbody>
+    </table>
+
+    <script type="module" src="add-surgery.js"></script>
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

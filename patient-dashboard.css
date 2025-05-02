@@ -1,0 +1,104 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Heading */
+h2 {
+    color: #4facfe;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table Cells */
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Table Header */
+th {
+    background: #4facfe;
+    color: white;
+}
+
+/* Table Rows Hover */
+tr:hover {
+    background: #f1f1f1;
+}
+
+/* Button */
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Button Hover */
+button:hover {
+    background: #d9363e;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .dashboard-container {
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    th, td {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
